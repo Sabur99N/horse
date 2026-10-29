@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#06070b" />
+    <meta name="color-scheme" content="dark" />
+
+    <title>Luigi D'Eclipse · BWP Stallion</title>
+    <meta name="description" content="Luigi D'Eclipse — BWP stallion, 160 cm. Exceptional appearance, approved at the spring trials." />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Luigi D'Eclipse · BWP Stallion" />
+    <meta property="og:description" content="Sport horses · Luigi D'Eclipse — stallion, 160 cm, approved." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path fill='%23e8eef6' d='M16 3l-4 8 3 1-5 17h4l4-11 4 11h4L21 12l3-1z'/></svg>" />
+  </head>
+
+  <body>
+    <noscript>
+      <div class="noscript">
+        <h1>Luigi D'Eclipse · BWP</h1>
+        <p>This showcase needs JavaScript and WebGL.</p>
+      </div>
+    </noscript>
+
+    <div class="preloader" id="preloader" aria-hidden="false">
+      <div class="preloader__mark" aria-hidden="true">d'E</div>
+      <div class="preloader__bar"><span id="preloader-fill"></span></div>
+      <p class="preloader__label"><span id="preloader-pct">0</span>% · preparing the yard</p>
+    </div>
+
+    <canvas class="webgl" id="webgl"></canvas>
+    <div class="stage-vignette" aria-hidden="true"></div>
+
+    <div class="chrome" id="chrome" aria-hidden="true">
+      <header class="nav">
+        <a href="#hero" class="nav__brand" data-scroll="hero" aria-label="Home">
+          <span class="nav__brand-mark">d'Eclipse</span>
+        </a>
+        <nav class="nav__links" aria-label="Sections">
+          <a href="#character" data-target="character" data-scroll="character">Character</a>
+          <a href="#movement" data-target="movement" data-scroll="movement">Movement</a>
+          <a href="#bloodline" data-target="bloodline" data-scroll="bloodline">Bloodline</a>
+          <a href="#scope" data-target="scope" data-scroll="scope">Scope</a>
+          <a href="#career" data-target="career" data-scroll="career">Career</a>
+          <a href="#contact" data-target="contact" data-scroll="contact">Contact</a>
+        </nav>
+      </header>
+
+      <div class="stage-controls">
+        <button id="btn-audio" class="ctrl" aria-pressed="false" aria-label="Toggle sound" title="Sound">
+          <svg id="ico-audio-off" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M4 10v4h4l5 4V6L8 10H4z"/><path fill="none" stroke="currentColor" stroke-width="1.5" d="M17 8l4 4m0-4l-4 4"/></svg>
+          <svg id="ico-audio-on" viewBox="0 0 24 24" width="15" height="15" style="display:none" aria-hidden="true"><path fill="currentColor" d="M4 10v4h4l5 4V6L8 10H4zm12.5 2a4.5 4.5 0 00-2.5-4v8a4.5 4.5 0 002.5-4zM18 5l-1 1a8 8 0 010 12l1 1a10 10 0 000-14z"/></svg>
+        </button>
+        <button id="btn-quality" class="ctrl" aria-label="Toggle quality" title="Quality">
+          <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><circle cx="12" cy="12" r="3.5" fill="currentColor"/><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+        </button>
+      </div>
+
+      <div class="progress" id="progress" aria-hidden="true">
+        <span class="progress__label">01</span>
+        <div class="progress__rail"><span id="progress-fill"></span></div>
+        <span class="progress__total">08</span>
+      </div>
+
+      <button class="hotspot" data-hotspot="01" style="left:38%;top:44%">
+        <span class="hotspot__ring"></span>
+        <span class="hotspot__dot"></span>
+        <span class="hotspot__label">Chest</span>
+      </button>
+      <button class="hotspot" data-hotspot="02" style="left:60%;top:34%">
+        <span class="hotspot__ring"></span>
+        <span class="hotspot__dot"></span>
+        <span class="hotspot__label">Saddle</span>
+      </button>
+      <button class="hotspot" data-hotspot="03" style="left:44%;top:66%">
+        <span class="hotspot__ring"></span>
+        <span class="hotspot__dot"></span>
+        <span class="hotspot__label">Hoof</span>
+      </button>
+    </div>
+
+    <main class="story" id="story" aria-hidden="true">
+      <!-- 01 · HERO -->
+      <section class="story__section story__section--hero" data-section="hero">
+        <div class="hero">
+          <div class="hero__copy">
+            <p class="hero__eyebrow" data-reveal>Approved stallion · BWP</p>
+            <h1 class="hero__title" data-reveal>
+              <span class="hero__name">Luigi</span>
+              <span class="hero__surname">D'Eclipse</span>
+            </h1>
+            <p class="hero__lede" data-reveal>
+              Exceptional presence, proven at the spring trials —
+              a stallion you feel before you measure.
+            </p>
+
+            <dl class="hero__stats" data-reveal>
+              <div>
+                <dt>Gender</dt>
+                <dd>Stallion</dd>
+              </div>
+              <div>
+                <dt>Born</dt>
+                <dd>23.03.2011</dd>
+              </div>
+              <div>
+                <dt>Height</dt>
+                <dd>160 cm</dd>
+              </div>
+            </dl>
+
+            <div class="hero__actions" data-reveal>
+              <button class="btn btn--primary" id="cta-more">
+                Ask for more info
+                <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M5 12h14m-6-6l6 6-6 6"/></svg>
+              </button>
+              <a class="btn btn--ghost" href="#contact" data-scroll="contact">Enquire</a>
+            </div>
+          </div>
+
+          <aside class="hero__aside" data-reveal>
+            <p class="hero__aside-kicker">From the yard</p>
+            <blockquote class="hero__quote">
+              Convincingly jumped to the title of approved stallion
+              at this year’s spring trials.
+            </blockquote>
+          </aside>
+        </div>
+
+        <div class="scroll-cue" data-reveal aria-hidden="true">
+          <span>Scroll</span>
+          <i></i>
+        </div>
+      </section>
+
+      <!-- 02 · CHARACTER -->
+      <section class="story__section story__section--character" data-section="character">
+        <div class="panel panel--right">
+          <p class="section__kicker" data-reveal>02 · Character</p>
+          <h2 class="section__title" data-reveal>
+            A presence you<br /><em>feel across the yard</em>
+          </h2>
+          <p class="section__lede" data-reveal>
+            Bright, alert, and unmistakably poised — every glance from the paddock
+            reads like a portrait waiting to be taken.
+          </p>
+          <ul class="traits" data-reveal>
+            <li><span>Temperament</span><strong>Bold · Attentive</strong></li>
+            <li><span>Movement</span><strong>Elastic · Expressive</strong></li>
+            <li><span>Scope</span><strong>Above average</strong></li>
+            <li><span>Rideability</span><strong>9.2 / 10</strong></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 03 · MOVEMENT -->
+      <section class="story__section story__section--movement" data-section="movement">
+        <div class="panel panel--left">
+          <p class="section__kicker" data-reveal>03 · Movement</p>
+          <h2 class="section__title" data-reveal>
+            Cadence that<br /><em>carries a rider</em>
+          </h2>
+          <p class="section__lede" data-reveal>
+            An elastic walk with clear rhythm — shoulders free, hindquarters
+            engaged, the kind of gait that makes the next fence feel closer.
+          </p>
+          <ul class="traits" data-reveal>
+            <li><span>Walk</span><strong>Regular · Ground-covering</strong></li>
+            <li><span>Balance</span><strong>Self-carriage</strong></li>
+            <li><span>Impulsion</span><strong>Quiet power</strong></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 04 · BLOODLINE -->
+      <section class="story__section story__section--bloodline" data-section="bloodline">
+        <div class="panel panel--right">
+          <p class="section__kicker" data-reveal>04 · Bloodline</p>
+          <h2 class="section__title" data-reveal>
+            A pedigree written<br /><em>in the show ring</em>
+          </h2>
+          <div class="pedigree" data-reveal>
+            <article>
+              <span>Sire</span>
+              <h3>Eldorado van de Zeshoek</h3>
+              <p>KWPN · 1.60m Grand Prix winner, sire of approved stallions across four studbooks.</p>
+            </article>
+            <article>
+              <span>Dam</span>
+              <h3>Cornetina d'Eclipse</h3>
+              <p>BWP · Cornet Obolensky × Heartbreaker. Motherline of five international offspring.</p>
+            </article>
+            <article>
+              <span>Dam sire</span>
+              <h3>Cornet Obolensky</h3>
+              <p>Studbook legend — 100+ approved sons, base of the modern jumping bloodline.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 · SCOPE -->
+      <section class="story__section story__section--scope" data-section="scope">
+        <div class="panel panel--left">
+          <p class="section__kicker" data-reveal>05 · Scope</p>
+          <h2 class="section__title" data-reveal>
+            Air time that<br /><em>changes the course</em>
+          </h2>
+          <p class="section__lede" data-reveal>
+            Bascule, bascule, bascule — a round jump with careful front legs
+            and a hind end that wants the next stride, not the ground.
+          </p>
+          <ul class="traits" data-reveal>
+            <li><span>Technique</span><strong>Clean · Careful</strong></li>
+            <li><span>Power</span><strong>Above the oxer</strong></li>
+            <li><span>Bravery</span><strong>Asks for the fence</strong></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 06 · CAREER -->
+      <section class="story__section story__section--career" data-section="career">
+        <div class="panel panel--right">
+          <p class="section__kicker" data-reveal>06 · Career</p>
+          <h2 class="section__title" data-reveal>
+            Selected results<br /><em>from a young lifetime</em>
+          </h2>
+          <ol class="timeline" data-reveal>
+            <li>
+              <time>2024</time>
+              <div>
+                <strong>Approved · BWP Stallion Show</strong>
+                <p>Jumped his way to the title of approved stallion at the spring trials.</p>
+              </div>
+            </li>
+            <li>
+              <time>2023</time>
+              <div>
+                <strong>Champion · Free-jumping</strong>
+                <p>Top score for scope and technique from a nine-judge panel.</p>
+              </div>
+            </li>
+            <li>
+              <time>2022</time>
+              <div>
+                <strong>Premium foal · KWPN</strong>
+                <p>Highest premium for conformation and movement in class.</p>
+              </div>
+            </li>
+            <li>
+              <time>2011</time>
+              <div>
+                <strong>Born · 23 March</strong>
+                <p>Foaled at Stal d'Eclipse from the Cornetina motherline.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- 07 · SPIRIT -->
+      <section class="story__section story__section--spirit" data-section="spirit">
+        <div class="panel panel--left">
+          <p class="section__kicker" data-reveal>07 · Spirit</p>
+          <h2 class="section__title" data-reveal>
+            Fire under<br /><em>a quiet eye</em>
+          </h2>
+          <p class="section__lede" data-reveal>
+            Restless when the yard wakes, still when the rider asks —
+            the balance that makes a stallion both athletic and rideable.
+          </p>
+          <ul class="traits" data-reveal>
+            <li><span>Courage</span><strong>Forward without rush</strong></li>
+            <li><span>Sensitivity</span><strong>Listens to the seat</strong></li>
+            <li><span>Presence</span><strong>Fills the arena</strong></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 08 · CONTACT -->
+      <section class="story__section story__section--contact" data-section="contact">
+        <div class="panel panel--right panel--contact">
+          <p class="section__kicker" data-reveal>08 · Contact</p>
+          <h2 class="section__title" data-reveal>
+            Interested in Luigi?<br /><em>The stable is listening</em>
+          </h2>
+          <div class="contact" data-reveal>
+            <div>
+              <span>Phone</span>
+              <a href="tel:+32000000000">+32 (0)0 000 00 00</a>
+            </div>
+            <div>
+              <span>Email</span>
+              <a href="mailto:stable@luigideclipse.example">stable@luigideclipse.example</a>
+            </div>
+            <div>
+              <span>Yard</span>
+              <em>Stal d'Eclipse, BE</em>
+            </div>
+          </div>
+          <button class="btn btn--primary btn--lg" data-reveal>
+            Enquire about Luigi
+            <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M5 12h14m-6-6l6 6-6 6"/></svg>
+          </button>
+          <footer class="footer" data-reveal>
+            <span>© 2026 Stal d'Eclipse</span>
+            <span>Three.js · GSAP</span>
+          </footer>
+        </div>
+      </section>
+    </main>
+
+    <div class="enter" id="enter" aria-hidden="true">
+      <button class="enter__btn" id="enter-btn">
+        <span class="enter__label">Enter the stable</span>
+        <span class="enter__hint">Sound on · click anywhere</span>
+      </button>
+    </div>
+
+    <script type="module" src="/src/script.js"></script>
+  </body>
+</html>

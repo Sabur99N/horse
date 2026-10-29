@@ -1,0 +1,26 @@
+{
+  "name": "luigi-declipse",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Premium cinematic 3D horse showcase — LUIGI D'ECLIPSE BWP",
+  "scripts": {
+    "dev": "vite",
+    "dev:host": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview",
+    "optimize": "node scripts/optimize-assets.mjs"
+  },
+  "devDependencies": {
+    "@gltf-transform/cli": "^4.4.1",
+    "sharp": "^0.35.3",
+    "vite": "^5.4.10"
+  },
+  "dependencies": {
+    "gsap": "^3.12.5",
+    "lenis": "^1.3.25",
+    "lil-gui": "^0.19.2",
+    "stats.js": "^0.17.0",
+    "three": "^0.169.0"
+  }
+}
